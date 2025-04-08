@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmhlwt1evlw4h"]
+
+[ext_resource type="Texture2D" uid="uid://dfcw4iqdh811q" path="res://asset/background/LittleForest.jpg" id="1_ibkli"]
+[ext_resource type="PackedScene" uid="uid://dambi0dx4ov6f" path="res://player/Player.tscn" id="2_cpr0p"]
+[ext_resource type="PackedScene" uid="uid://c4g2e20qdtgw7" path="res://monster/Monster.tscn" id="3_78awf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpr0p"]
+distance = -533.0
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ibkli")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+metadata/_edit_lock_ = true
+
+[node name="Monster" parent="." instance=ExtResource("3_78awf")]
+position = Vector2(520, 371)
+
+[node name="Player" parent="." instance=ExtResource("2_cpr0p")]
+position = Vector2(-374, 375)
+
+[node name="Boundary" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundary"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D"]
+position = Vector2(0, -10)
+shape = SubResource("WorldBoundaryShape2D_cpr0p")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundary"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D2"]
+position = Vector2(-410, 400)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_cpr0p")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Boundary"]
+position = Vector2(420, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D3"]
+position = Vector2(-12, 7)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_cpr0p")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Boundary"]
+position = Vector2(-11, 144)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D4"]
+position = Vector2(12, -411)
+shape = SubResource("WorldBoundaryShape2D_cpr0p")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cj8abflitx8ix"]
 
-[ext_resource type="Texture2D" uid="uid://dfcw4iqdh811q" path="res://scenes/Little Forest.jpg" id="1_6a31k"]
-[ext_resource type="PackedScene" uid="uid://dambi0dx4ov6f" path="res://hanli/hanli.tscn" id="2_jfqcx"]
-[ext_resource type="PackedScene" uid="uid://c4g2e20qdtgw7" path="res://lvjingling/lvjingling.tscn" id="3_jfqcx"]
+[ext_resource type="Texture2D" uid="uid://dfcw4iqdh811q" path="res://asset/background/LittleForest.jpg" id="1_6a31k"]
+[ext_resource type="PackedScene" uid="uid://dambi0dx4ov6f" path="res://player/Player.tscn" id="2_jfqcx"]
+[ext_resource type="PackedScene" uid="uid://c4g2e20qdtgw7" path="res://monster/Monster.tscn" id="3_jfqcx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmvyf"]
 distance = -1.90637

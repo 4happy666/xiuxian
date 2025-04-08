@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4g2e20qdtgw7"]
+[gd_scene load_steps=11 format=3 uid="uid://c4g2e20qdtgw7"]
 
-[ext_resource type="Texture2D" uid="uid://d25sp6ebj1gom" path="res://lvjingling/Y绿精灵.png" id="1_da4un"]
+[ext_resource type="Script" uid="uid://bdf7k5fsdsrsr" path="res://monster/monster.gd" id="1_btgbp"]
+[ext_resource type="Texture2D" uid="uid://d25sp6ebj1gom" path="res://asset/monster/Y绿精灵.png" id="1_da4un"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtqyc"]
 atlas = ExtResource("1_da4un")
@@ -53,18 +54,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdg15"]
-radius = 25.0
+radius = 29.0
 height = 68.0
 
-[node name="lvjingling" type="Area2D"]
+[node name="Monster" type="Area2D"]
+script = ExtResource("1_btgbp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(9, -29)
 sprite_frames = SubResource("SpriteFrames_kgt38")
 animation = &"移动"
 autoplay = "移动"
-frame_progress = 0.67874
+frame_progress = 0.279487
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
-position = Vector2(-9, 14)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_fdg15")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

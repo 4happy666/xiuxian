@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfcw4iqdh811q"
-path="res://.godot/imported/Little Forest.jpg-d6f96b0462bb7de968132a3d766627c4.ctex"
+uid="uid://cbw3sbolexs20"
+path="res://.godot/imported/_Attack.png-debed13dc1d027b9e3f483b4ab2dc985.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Little Forest.jpg"
-dest_files=["res://.godot/imported/Little Forest.jpg-d6f96b0462bb7de968132a3d766627c4.ctex"]
+source_file="res://asset/player/_Attack.png"
+dest_files=["res://.godot/imported/_Attack.png-debed13dc1d027b9e3f483b4ab2dc985.ctex"]
 
 [params]
 

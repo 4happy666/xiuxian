@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbw3sbolexs20"
-path="res://.godot/imported/_Attack.png-188d436485936b8b46c5f0a95e4f4b07.ctex"
+uid="uid://d25sp6ebj1gom"
+path="res://.godot/imported/Y绿精灵.png-77b41218cfc93c7a81758293e9ce6e75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hanli/_Attack.png"
-dest_files=["res://.godot/imported/_Attack.png-188d436485936b8b46c5f0a95e4f4b07.ctex"]
+source_file="res://asset/monster/Y绿精灵.png"
+dest_files=["res://.godot/imported/Y绿精灵.png-77b41218cfc93c7a81758293e9ce6e75.ctex"]
 
 [params]
 

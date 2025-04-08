@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d25sp6ebj1gom"
-path="res://.godot/imported/Y绿精灵.png-ec1f35e0c1df4e39ab1614af8c71fa8d.ctex"
+uid="uid://dfcw4iqdh811q"
+path="res://.godot/imported/LittleForest.jpg-e8aa42972d1f251aa1e2225824a70cff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://lvjingling/Y绿精灵.png"
-dest_files=["res://.godot/imported/Y绿精灵.png-ec1f35e0c1df4e39ab1614af8c71fa8d.ctex"]
+source_file="res://asset/background/LittleForest.jpg"
+dest_files=["res://.godot/imported/LittleForest.jpg-e8aa42972d1f251aa1e2225824a70cff.ctex"]
 
 [params]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://dambi0dx4ov6f"]
+[gd_scene load_steps=31 format=3 uid="uid://dambi0dx4ov6f"]
 
-[ext_resource type="Texture2D" uid="uid://dp0tudsvqh1yo" path="res://hanli/_Run.png" id="1_iwvj8"]
-[ext_resource type="Texture2D" uid="uid://daul0qixiu68x" path="res://hanli/_Idle.png" id="1_o0ta0"]
-[ext_resource type="Texture2D" uid="uid://cbw3sbolexs20" path="res://hanli/_Attack.png" id="2_t22kh"]
+[ext_resource type="Script" uid="uid://hwwmmkchnh1i" path="res://scripts/Player.gd" id="1_83hs8"]
+[ext_resource type="Texture2D" uid="uid://dp0tudsvqh1yo" path="res://asset/player/_Run.png" id="1_iwvj8"]
+[ext_resource type="Texture2D" uid="uid://daul0qixiu68x" path="res://asset/player/_Idle.png" id="1_o0ta0"]
+[ext_resource type="Texture2D" uid="uid://cbw3sbolexs20" path="res://asset/player/_Attack.png" id="2_t22kh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwvj8"]
 atlas = ExtResource("1_o0ta0")
@@ -191,18 +192,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bvy7o"]
-radius = 9.0
-height = 40.0
+radius = 12.0
+height = 44.0
 
-[node name="韩立" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_83hs8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_o72of")
 animation = &"待机"
 autoplay = "待机"
-frame_progress = 0.992596
+frame_progress = 0.0726545
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 3)
+position = Vector2(-4, 2)
 shape = SubResource("CapsuleShape2D_bvy7o")
