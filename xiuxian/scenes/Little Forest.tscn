@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj8abflitx8ix"]
+
+[ext_resource type="Texture2D" uid="uid://dfcw4iqdh811q" path="res://scenes/Little Forest.jpg" id="1_6a31k"]
+[ext_resource type="PackedScene" uid="uid://dambi0dx4ov6f" path="res://hanli/hanli.tscn" id="2_jfqcx"]
+[ext_resource type="PackedScene" uid="uid://c4g2e20qdtgw7" path="res://lvjingling/lvjingling.tscn" id="3_jfqcx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmvyf"]
+distance = -1.90637
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Little Forest1" type="Sprite2D" parent="."]
+position = Vector2(-960, -1)
+texture = ExtResource("1_6a31k")
+
+[node name="Little Forest2" type="Sprite2D" parent="."]
+position = Vector2(960, -1)
+texture = ExtResource("1_6a31k")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1467, 272)
+zoom = Vector2(1.275, 1.22)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 536)
+rotation = -0.00549206
+shape = SubResource("WorldBoundaryShape2D_rmvyf")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-1384, 363)
+rotation = 1.57398
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, 536)
+rotation = -0.00549206
+shape = SubResource("WorldBoundaryShape2D_rmvyf")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1383, 374)
+rotation = -1.56914
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(0, 536)
+rotation = -0.00549206
+shape = SubResource("WorldBoundaryShape2D_rmvyf")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(0, 784)
+rotation = 3.14132
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(0, 536)
+rotation = -0.00549206
+shape = SubResource("WorldBoundaryShape2D_rmvyf")
+
+[node name="韩立" parent="." instance=ExtResource("2_jfqcx")]
+position = Vector2(-1713, 364)
+
+[node name="lvjingling" parent="." instance=ExtResource("3_jfqcx")]
+position = Vector2(-1191, 374)
