@@ -1,40 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmhlwt1evlw4h"]
+[gd_scene load_steps=6 format=3 uid="uid://cmhlwt1evlw4h"]
 
 [ext_resource type="Texture2D" uid="uid://dfcw4iqdh811q" path="res://asset/background/LittleForest.jpg" id="1_ibkli"]
 [ext_resource type="PackedScene" uid="uid://dambi0dx4ov6f" path="res://player/Player.tscn" id="2_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://c4g2e20qdtgw7" path="res://monster/Monster.tscn" id="3_78awf"]
+[ext_resource type="PackedScene" uid="uid://bjjjcsu3t60he" path="res://jineng/jineng1.tscn" id="4_78awf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpr0p"]
-distance = -533.0
+distance = -522.0
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 3.05176e-05)
+scale = Vector2(0.420418, 0.418519)
 texture = ExtResource("1_ibkli")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
-metadata/_edit_lock_ = true
+zoom = Vector2(1.43, 1.43)
 
 [node name="Monster" parent="." instance=ExtResource("3_78awf")]
-position = Vector2(520, 371)
+position = Vector2(268, 137)
 
 [node name="Player" parent="." instance=ExtResource("2_cpr0p")]
-position = Vector2(-374, 375)
+position = Vector2(-298, 131)
 
 [node name="Boundary" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boundary"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D"]
-position = Vector2(0, -10)
+position = Vector2(0, -297)
 shape = SubResource("WorldBoundaryShape2D_cpr0p")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Boundary"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D2"]
-position = Vector2(-410, 400)
+position = Vector2(121, 137)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_cpr0p")
 
@@ -42,7 +44,7 @@ shape = SubResource("WorldBoundaryShape2D_cpr0p")
 position = Vector2(420, 400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D3"]
-position = Vector2(-12, 7)
+position = Vector2(-539, -279)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_cpr0p")
 
@@ -50,5 +52,8 @@ shape = SubResource("WorldBoundaryShape2D_cpr0p")
 position = Vector2(-11, 144)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D4"]
-position = Vector2(12, -411)
+position = Vector2(12, -561)
 shape = SubResource("WorldBoundaryShape2D_cpr0p")
+
+[node name="Area2D" parent="." instance=ExtResource("4_78awf")]
+position = Vector2(-252, 137)

@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjjjcsu3t60he"]
+
+[ext_resource type="Texture2D" uid="uid://i48foqnsrx4p" path="res://asset/jineng/jineng.png" id="1_efu21"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6n3q"]
+atlas = ExtResource("1_efu21")
+region = Rect2(0, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8lsf"]
+atlas = ExtResource("1_efu21")
+region = Rect2(32, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it5xk"]
+atlas = ExtResource("1_efu21")
+region = Rect2(64, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br722"]
+atlas = ExtResource("1_efu21")
+region = Rect2(96, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eel8u"]
+atlas = ExtResource("1_efu21")
+region = Rect2(128, 320, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8q7hq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6n3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8lsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it5xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br722")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eel8u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h168x"]
+radius = 15.0
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8q7hq")
+autoplay = "default"
+frame_progress = 0.973695
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("CapsuleShape2D_h168x")
