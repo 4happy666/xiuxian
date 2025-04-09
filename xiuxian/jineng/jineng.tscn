@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjjjcsu3t60he"]
+[gd_scene load_steps=10 format=3 uid="uid://bjjjcsu3t60he"]
 
 [ext_resource type="Texture2D" uid="uid://i48foqnsrx4p" path="res://asset/jineng/jineng.png" id="1_efu21"]
+[ext_resource type="Script" uid="uid://c81rdml6l1ock" path="res://jineng/bullet.gd" id="2_vkbwh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6n3q"]
 atlas = ExtResource("1_efu21")
@@ -41,20 +42,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_eel8u")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h168x"]
-radius = 15.0
+radius = 17.0
+height = 38.0
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" groups=["bullets"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8q7hq")
-autoplay = "default"
-frame_progress = 0.973695
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.509951
+script = ExtResource("2_vkbwh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(-1, -3)
 shape = SubResource("CapsuleShape2D_h168x")

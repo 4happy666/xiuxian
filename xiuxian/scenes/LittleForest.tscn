@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj8abflitx8ix"]
+[gd_scene load_steps=6 format=3 uid="uid://6ilmwme7vrs8"]
 
 [ext_resource type="Texture2D" uid="uid://dfcw4iqdh811q" path="res://asset/background/LittleForest.jpg" id="1_6a31k"]
 [ext_resource type="PackedScene" uid="uid://dambi0dx4ov6f" path="res://player/Player.tscn" id="2_jfqcx"]
-[ext_resource type="PackedScene" uid="uid://c4g2e20qdtgw7" path="res://monster/Monster.tscn" id="3_jfqcx"]
-[ext_resource type="PackedScene" uid="uid://bjjjcsu3t60he" path="res://jineng/jineng1.tscn" id="4_hlurc"]
-[ext_resource type="PackedScene" uid="uid://clo01kq013fip" path="res://monster1/kulou.tscn" id="5_mu508"]
+[ext_resource type="PackedScene" uid="uid://bjjjcsu3t60he" path="res://jineng/jineng.tscn" id="4_hlurc"]
+[ext_resource type="PackedScene" uid="uid://clo01kq013fip" path="res://monster/Monster.tscn" id="5_mu508"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmvyf"]
 distance = -24.9823
@@ -57,7 +56,7 @@ shape = SubResource("WorldBoundaryShape2D_rmvyf")
 [node name="韩立" parent="." instance=ExtResource("2_jfqcx")]
 position = Vector2(-326, 158)
 
-[node name="lvjingling" parent="." instance=ExtResource("3_jfqcx")]
+[node name="lvjingling" parent="." instance=ExtResource("5_mu508")]
 position = Vector2(365, 175)
 
 [node name="Area2D" parent="." instance=ExtResource("4_hlurc")]

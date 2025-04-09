@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="xiuxian"
-run/main_scene="uid://cj8abflitx8ix"
+run/main_scene="uid://cmhlwt1evlw4h"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

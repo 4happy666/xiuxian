@@ -1,59 +1,80 @@
 [gd_scene load_steps=6 format=3 uid="uid://cmhlwt1evlw4h"]
 
 [ext_resource type="Texture2D" uid="uid://dfcw4iqdh811q" path="res://asset/background/LittleForest.jpg" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://idhnawwiu7dm" path="res://scenes/GameManager.gd" id="1_s0nni"]
+[ext_resource type="PackedScene" uid="uid://clo01kq013fip" path="res://monster/Monster.tscn" id="2_78awf"]
 [ext_resource type="PackedScene" uid="uid://dambi0dx4ov6f" path="res://player/Player.tscn" id="2_cpr0p"]
-[ext_resource type="PackedScene" uid="uid://c4g2e20qdtgw7" path="res://monster/Monster.tscn" id="3_78awf"]
-[ext_resource type="PackedScene" uid="uid://bjjjcsu3t60he" path="res://jineng/jineng1.tscn" id="4_78awf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpr0p"]
 distance = -522.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("spawn_timer", "score_label")]
 y_sort_enabled = true
+script = ExtResource("1_s0nni")
+kulou_scene = ExtResource("2_78awf")
+spawn_timer = NodePath("Timer")
+score_label = NodePath("CanvasLayer/Label")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 3.05176e-05)
 scale = Vector2(0.420418, 0.418519)
 texture = ExtResource("1_ibkli")
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.43, 1.43)
-
-[node name="Monster" parent="." instance=ExtResource("3_78awf")]
-position = Vector2(268, 137)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_cpr0p")]
-position = Vector2(-298, 131)
+position = Vector2(-353, 147)
 
 [node name="Boundary" type="Node2D" parent="."]
+position = Vector2(-1, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boundary"]
+position = Vector2(-3, -11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D"]
 position = Vector2(0, -297)
 shape = SubResource("WorldBoundaryShape2D_cpr0p")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Boundary"]
+position = Vector2(-159, 118)
+rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D2"]
-position = Vector2(121, 137)
-rotation = 1.5708
+position = Vector2(0, -297)
 shape = SubResource("WorldBoundaryShape2D_cpr0p")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Boundary"]
-position = Vector2(420, 400)
+position = Vector2(147, 125)
+rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D3"]
-position = Vector2(-539, -279)
-rotation = -1.5708
+position = Vector2(0, -297)
 shape = SubResource("WorldBoundaryShape2D_cpr0p")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Boundary"]
-position = Vector2(-11, 144)
+position = Vector2(-4, 299)
+rotation = 3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D4"]
-position = Vector2(12, -561)
+position = Vector2(0, -297)
 shape = SubResource("WorldBoundaryShape2D_cpr0p")
 
-[node name="Area2D" parent="." instance=ExtResource("4_78awf")]
-position = Vector2(-252, 137)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 124.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Score：0"
+
+[connection signal="timeout" from="Timer" to="." method="_on_spawn_kulou"]
