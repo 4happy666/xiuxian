@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://ct6b6lrl8c2wu"]
+[gd_scene load_steps=12 format=4 uid="uid://ct6b6lrl8c2wu"]
 
 [ext_resource type="Script" uid="uid://d0isrhvbyjkaf" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://bvin4ttkeam28" path="res://asset/Bbackground/Tree-Assets.png" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://wgxsji0rle37" path="res://player/player.tscn" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://in7txxargjlw" path="res://Monster/boar.tscn" id="4_k0juu"]
 [ext_resource type="Texture2D" uid="uid://haw6b2hna45a" path="res://asset/Bbackground/Background1.png" id="4_qfnet"]
 [ext_resource type="Texture2D" uid="uid://dkoxkv3lwdimv" path="res://asset/Bbackground/Background.png" id="5_71j4m"]
 
@@ -407,12 +406,6 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
-
-[node name="Boar" parent="." instance=ExtResource("4_k0juu")]
-position = Vector2(602, -107)
-
-[node name="Boar2" parent="." instance=ExtResource("4_k0juu")]
-position = Vector2(1018, -171)
 
 [node name="Decoration" type="Node2D" parent="."]
 metadata/_edit_lock_ = true

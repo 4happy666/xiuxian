@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://cr4imficllreb"]
+[gd_scene load_steps=2 format=3 uid="uid://cr4imficllreb"]
+
+[ext_resource type="Script" uid="uid://bqvq4e0rcnc83" path="res://classes/StateMachine.gd" id="2_u1edi"]
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("2_u1edi")
 
 [node name="Graphics" type="Node2D" parent="."]
 
@@ -10,4 +14,6 @@
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Node" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_u1edi")
+metadata/_custom_type_script = "uid://bqvq4e0rcnc83"

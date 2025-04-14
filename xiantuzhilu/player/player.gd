@@ -3,7 +3,7 @@ extends CharacterBody2D
 const RUN_SPEED := 200.0
 const JUMP_VELOCITY := -300.0
 
-var gravity := ProjectSettings.get("physics/2d/default_gravity") as float
+var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -12,7 +12,7 @@ var gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	velocity.x = direction * RUN_SPEED
-	velocity.y += gravity * delta
+	velocity.y += default_gravity * delta
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
