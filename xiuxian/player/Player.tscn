@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=3 uid="uid://dambi0dx4ov6f"]
 
-[ext_resource type="Script" uid="uid://hwwmmkchnh1i" path="res://scripts/player.gd" id="1_83hs8"]
+[ext_resource type="Script" uid="uid://hwwmmkchnh1i" path="res://scripts/Player.gd" id="1_83hs8"]
 [ext_resource type="Texture2D" uid="uid://dp0tudsvqh1yo" path="res://asset/player/_Run.png" id="1_iwvj8"]
 [ext_resource type="Texture2D" uid="uid://daul0qixiu68x" path="res://asset/player/_Idle.png" id="1_o0ta0"]
 [ext_resource type="PackedScene" uid="uid://bjjjcsu3t60he" path="res://jineng/jineng.tscn" id="2_06mnu"]
@@ -338,5 +338,5 @@ shape = SubResource("CapsuleShape2D_bvy7o")
 wait_time = 1.5
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_skill"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

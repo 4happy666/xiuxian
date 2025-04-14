@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=4 uid="uid://ct6b6lrl8c2wu"]
+
+[ext_resource type="Texture2D" uid="uid://bvin4ttkeam28" path="res://asset/Bbackground/Tree-Assets.png" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://wgxsji0rle37" path="res://player/player.tscn" id="2_rwgxs"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
+texture = ExtResource("1_nnsk1")
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_4wyf3"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_rwgxs")
+
+[node name="world" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD1//7/AAABAAEAAAD1////AAABAAIAAAD2//7/AAABAAEAAAD2////AAABAAIAAAD3//7/AAABAAEAAAD3////AAABAAIAAAD4//7/AAABAAEAAAD4////AAABAAIAAAD5//7/AAABAAEAAAD5////AAABAAIAAAD6//7/AAABAAEAAAD6////AAABAAIAAAD7//7/AAABAAEAAAD7////AAABAAIAAAD8//7/AAABAAEAAAD8////AAABAAIAAAD9//7/AAABAAEAAAD9////AAABAAIAAAD+//7/AAABAAEAAAD+////AAABAAIAAAD///7/AAABAAEAAAD/////AAABAAIAAAAAAP7/AAABAAEAAAAAAP//AAABAAIAAAABAP7/AAABAAEAAAABAP//AAABAAIAAAACAP7/AAABAAEAAAACAP//AAABAAIAAAADAP7/AAABAAEAAAADAP//AAABAAIAAAAEAP7/AAABAAEAAAAEAP//AAABAAIAAAAFAP7/AAABAAEAAAAFAP//AAABAAIAAAAGAP7/AAABAAEAAAAGAP//AAABAAIAAAAHAP7/AAABAAEAAAAHAP//AAABAAIAAAAIAP7/AAABAAEAAAAIAP//AAABAAIAAAAJAP7/AAABAAEAAAAJAP//AAABAAIAAAAKAP7/AAABAAEAAAAKAP//AAABAAIAAAALAP7/AAABAAEAAAALAP//AAABAAIAAAAMAP7/AAABAAEAAAAMAP//AAABAAIAAAANAP7/AAABAAEAAAANAP//AAABAAIAAAAOAP7/AAABAAEAAAAOAP//AAABAAIAAAAPAP7/AAABAAEAAAAPAP//AAABAAIAAAAQAP7/AAABAAEAAAAQAP//AAABAAIAAAARAP7/AAABAAEAAAARAP//AAABAAIAAAASAP7/AAABAAEAAAASAP//AAABAAIAAAATAP7/AAABAAEAAAATAP//AAABAAIAAAAUAP7/AAABAAEAAAAUAP//AAABAAIAAAAVAP7/AAABAAEAAAAVAP//AAABAAIAAAA=")
+tile_set = SubResource("TileSet_4wyf3")
+
+[node name="player" parent="." instance=ExtResource("2_rwgxs")]
+position = Vector2(-88, -81)

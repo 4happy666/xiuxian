@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="xiuxian"
-run/main_scene="uid://cmhlwt1evlw4h"
+run/main_scene="uid://6ilmwme7vrs8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
 
 [input]
 
