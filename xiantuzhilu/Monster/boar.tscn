@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://in7txxargjlw"]
+[gd_scene load_steps=15 format=3 uid="uid://in7txxargjlw"]
 
 [ext_resource type="PackedScene" uid="uid://cr4imficllreb" path="res://Monster/enemy.tscn" id="1_0qc0m"]
 [ext_resource type="Texture2D" uid="uid://s6flvka1no35" path="res://asset/Monster/yezhu/Idle-Sheet.png" id="2_b8nd2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ppmxvijx13w" path="res://asset/Monster/yezhu/Hit-Sheet.png" id="3_b8nd2"]
 [ext_resource type="Texture2D" uid="uid://bu7mcpjh8tk77" path="res://asset/Monster/yezhu/Run-Sheet.png" id="4_onwsh"]
 [ext_resource type="Texture2D" uid="uid://c3fhowyffjy88" path="res://asset/Monster/yezhu/Walk-Base-Sheet.png" id="5_fbrjd"]
+[ext_resource type="PackedScene" uid="uid://btn3od42sa1pe" path="res://ui/status_panel_2.tscn" id="7_xjdvo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fbrjd"]
 radius = 14.0
@@ -223,9 +224,6 @@ _data = {
 
 [node name="Boar" instance=ExtResource("1_0qc0m")]
 script = ExtResource("2_r8rw4")
-direction = -1
-max_speed = 180.0
-acceleration = 2000.0
 
 [node name="Sprite2D" parent="Graphics" index="0"]
 position = Vector2(0, -16)
@@ -257,3 +255,9 @@ libraries = {
 [node name="CalmDownTimer" type="Timer" parent="." index="3"]
 wait_time = 2.5
 one_shot = true
+
+[node name="StatusPanel" parent="." index="5" instance=ExtResource("7_xjdvo")]
+offset_left = -30.0
+offset_top = -37.0
+offset_right = 28.0
+offset_bottom = -26.0
