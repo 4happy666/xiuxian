@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr4imficllreb"]
+[gd_scene load_steps=3 format=3 uid="uid://cr4imficllreb"]
 
+[ext_resource type="Script" uid="uid://ckdv4qygtrr26" path="res://Monster/enemy.gd" id="1_a6qr7"]
 [ext_resource type="Script" uid="uid://bqvq4e0rcnc83" path="res://classes/StateMachine.gd" id="2_u1edi"]
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
-script = ExtResource("2_u1edi")
+script = ExtResource("1_a6qr7")
 
 [node name="Graphics" type="Node2D" parent="."]
 

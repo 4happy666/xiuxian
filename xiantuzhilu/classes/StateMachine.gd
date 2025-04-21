@@ -1,7 +1,7 @@
 class_name StateMachine
 extends Node
 
-var current_state: int = -1 :
+var current_state: int = -1:
 	set(v):
 		owner.transition_state(current_state, v)
 		current_state = v
@@ -9,7 +9,6 @@ var current_state: int = -1 :
 var state_time: float = 0
 
 func _ready() -> void:
-	# godot中子节点ready后父节点才ready，此处等待父节点ready后再执行后续代码
 	await owner.ready
 	current_state = 0
 
