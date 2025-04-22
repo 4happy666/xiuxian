@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://btn3od42sa1pe"]
+
+[ext_resource type="Texture2D" uid="uid://dge8wn6ly70xh" path="res://asset/HUD/Base-01.png" id="1_v4ovw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3plgq"]
+atlas = ExtResource("1_v4ovw")
+region = Rect2(307, 6, 58, 4)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3plgq"]
+load_path = "res://.godot/imported/Base-01.png-807a32a842884bdd5ea6505232bce52a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jk47"]
+atlas = SubResource("CompressedTexture2D_3plgq")
+region = Rect2(308, 103, 56, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nptj"]
+atlas = SubResource("CompressedTexture2D_3plgq")
+region = Rect2(308, 71, 56, 2)
+
+[node name="StatusPanel" type="HBoxContainer"]
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_over = SubResource("AtlasTexture_3plgq")
+texture_progress = SubResource("AtlasTexture_0jk47")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="EasedHealthBar" type="TextureProgressBar" parent="HealthBar"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_progress = SubResource("AtlasTexture_7nptj")
+texture_progress_offset = Vector2(1, 1)
