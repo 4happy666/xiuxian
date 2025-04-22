@@ -6,6 +6,7 @@ enum State {
 	JUMP,
 	FALL,
 	LANDING,
+	WALL_SLIDING,
 }
 
 
@@ -18,10 +19,12 @@ const JUMP_VELOCITY := -300.0
 var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 var is_first_tick := false
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var graphics: Node2D = $Graphics
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_request_timer: Timer = $JumpRequestTimer
+@onready var hand_checker: RayCast2D = $Graphics/HandChecker
+@onready var foot_checker: RayCast2D = $Graphics/FootChecker
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -45,6 +48,9 @@ func tick_physics(state: State, delta: float) -> void:
 			move(default_gravity, delta)
 		State.LANDING:
 			stand(delta)
+		State.WALL_SLIDING:
+			move(default_gravity / 3, delta)
+			graphics.scale.x = get_wall_normal().x
 			
 	is_first_tick = false
 			
@@ -55,7 +61,7 @@ func move(gravity: float, delta: float) -> void:
 	velocity.y += gravity * delta
 	
 	if not is_zero_approx(direction):
-		sprite_2d.flip_h = direction < 0
+		graphics.scale.x = -1 if direction < 0 else +1
 		
 	move_and_slide()
 
@@ -73,6 +79,7 @@ func get_next_state(state: State) -> State:
 		return State.JUMP
 	var direction := Input.get_axis("move_left", "move_right")
 	var is_still := is_zero_approx(direction) and is_zero_approx(velocity.x)
+	
 	match state:
 		State.IDLE:
 			if not is_on_floor():
@@ -88,15 +95,24 @@ func get_next_state(state: State) -> State:
 		State.FALL:
 			if is_on_floor():
 				return State.LANDING if is_still else State.RUNNING
+			if is_on_wall() and hand_checker.is_colliding() and foot_checker.is_colliding():
+				return State.WALL_SLIDING
 		State.LANDING:
+			if not is_still:
+				return State.RUNNING
 			if not animation_player.is_playing():
 				return State.IDLE
+		State.WALL_SLIDING:
+			if is_on_floor():
+				return State.IDLE
+			if not is_on_wall():
+				return State.FALL
 				
 	return state
 	
 func transition_state(from: State, to: State) -> void:
 	if from not in GROUND_STATES and to in GROUND_STATES:
-				coyote_timer.stop()
+		coyote_timer.stop()
 				
 	match to:
 		State.IDLE:
@@ -114,5 +130,7 @@ func transition_state(from: State, to: State) -> void:
 				coyote_timer.start()
 		State.LANDING:
 			animation_player.play("landing")
+		State.WALL_SLIDING:
+			animation_player.play("wall_sliding")
 				
 	is_first_tick = true
